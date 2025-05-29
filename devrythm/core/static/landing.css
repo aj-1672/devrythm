@@ -1,0 +1,96 @@
+/* Remove margin/padding and set dark background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+/* Make the spline viewer cover the full viewport */
+spline-viewer {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 40px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-left .logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav-right a {
+  color: white;
+  margin-left: 45px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #00ffab);
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+}
+
+/* Button container */
+#open-editor-btn {
+  margin-left: 45px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* space between icon and text */
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #00ffab);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#open-editor-btn:hover {
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #00ffab);
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 255, 171, 0.6);
+  transform: scale(0.96);
+}
+
+
+#open-editor-btn .material-symbols-outlined {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* Make the spline viewer cover the full viewport */
+spline-viewer {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 0;
+  position: relative;
+}
+
+/* FORM CONTAINER OVER SPLINE */
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 16px;
+  color: white;
+  max-width: 400px;
+  width: 90%;
+}
