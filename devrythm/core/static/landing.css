@@ -20,9 +20,6 @@ spline-viewer {
   display: block;
 }
 
-
-
-
 .navbar {
   position: fixed;
   top: 0;
@@ -83,7 +80,6 @@ spline-viewer {
   box-shadow: 0 0 15px rgba(0, 255, 171, 0.6);
   transform: scale(0.96);
 }
-
 
 #open-editor-btn .material-symbols-outlined {
   font-size: 20px;

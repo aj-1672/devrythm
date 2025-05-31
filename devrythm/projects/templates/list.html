@@ -1,51 +1,78 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Projects | Dribbble-inspired</title>
-    <link rel="stylesheet" href="/static/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Devrythm</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+    <!-- Google Fonts and Icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <div class="header">
-      <div class="logo">ProjectHub</div>
-      <div class="search">Search...</div>
-    </div>
+    <!-- Hero Section with Logo -->
+    <section class="hero">
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"
+      ></script>
+      <spline-viewer
+        url="https://prod.spline.design/jgTupVjWs56orLbE/scene.splinecode"
+      ></spline-viewer>
+      <div class="hero-logo">Devrythm</div>
+      <div class="hero-content">
+        <h1>Unlock your development potential</h1>
+        <p>
+          Devrythm helps developers organize and showcase their projects with
+          style.
+        </p>
+      </div>
+    </section>
 
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project-card">
-        <div class="project-image">[Thumbnail]</div>
-        <div class="project-info">
-          <div class="project-title">Mobile App Design</div>
-          <div class="project-meta">
-            <span>12 likes</span>
-            <span>3 comments</span>
-          </div>
-          <div class="tags">
-            <span class="tag">UI/UX</span>
-            <span class="tag">Figma</span>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="logo">Devrythm</div>
+      </div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="{% url 'project_list' %}" class="active">Projects</a>
+          <a href="#manage">Manage</a>
+        </div>
+        <button class="nav-search-btn">
+          <span class="material-icons">search</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Projects Grid -->
+    <div class="content-section">
+      <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card">
+          <div class="project-image">[Thumbnail]</div>
+          <div class="project-info">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
           </div>
         </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div class="project-image">[Thumbnail]</div>
-        <div class="project-info">
-          <div class="project-title">Dashboard Concept</div>
-          <div class="project-meta">
-            <span>28 likes</span>
-            <span>7 comments</span>
-          </div>
-          <div class="tags">
-            <span class="tag">Web</span>
-            <span class="tag">React</span>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'scroll-effect.js' %}"></script>
   </body>
 </html>

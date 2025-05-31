@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import Project
 
 
 def project_list(request):
-    return render(request, "list.html")  # You'll create this template later
+    projects = Project.objects.all()  # Make sure this queryset exists
+    return render(request, "list.html", {"projects": projects})  # Key must match
 
 
 def project_detail(request, project_id):
