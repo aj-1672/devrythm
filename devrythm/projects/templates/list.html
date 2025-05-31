@@ -4,75 +4,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Devrythm</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
-
-    <!-- Google Fonts and Icons -->
+    <title>Devrythm | AI-Powered Development</title>
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"
+    ></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="{% static "style.css" %}"
   </head>
-
   <body>
-    <!-- Hero Section with Logo -->
+    <!-- Spline Background Animation -->
+    <spline-viewer
+      url="https://prod.spline.design/58or5M-4bJkCkHL0/scene.splinecode"
+      loading-anim-type="spinner-small-dark"
+    ></spline-viewer>
+
+    <!-- Hero Section -->
     <section class="hero">
-      <script
-        type="module"
-        src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"
-      ></script>
-      <spline-viewer
-        url="https://prod.spline.design/jgTupVjWs56orLbE/scene.splinecode"
-      ></spline-viewer>
-      <div class="hero-logo">Devrythm</div>
+      <nav class="hero-nav">
+        <a>Home</a>
+        <a>Projects</a>
+        <a>Manage</a>
+      </nav>
       <div class="hero-content">
-        <h1>Unlock your development potential</h1>
+        <h1>Build an AI Driven Future for Your Business</h1>
         <p>
-          Devrythm helps developers organize and showcase their projects with
-          style.
+          Bring custom AI practice to any of your business processes, on
+          premises.
         </p>
+        <div class="hero-buttons">
+          <a href="#" class="hero-button primary-button"
+            >Get it for your business</a
+          >
+          <a href="#" class="hero-button secondary-button">Discover more</a>
+        </div>
       </div>
     </section>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="nav-left">
-        <div class="logo">Devrythm</div>
-      </div>
-      <div class="nav-right">
-        <div class="nav-links">
-          <a href="/">Home</a>
-          <a href="{% url 'project_list' %}" class="active">Projects</a>
-          <a href="#manage">Manage</a>
-        </div>
-        <button class="nav-search-btn">
-          <span class="material-icons">search</span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Projects Grid -->
-    <div class="content-section">
-      <div class="projects-grid">
-        {% for project in projects %}
-        <div class="project-card">
-          <div class="project-image">[Thumbnail]</div>
-          <div class="project-info">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="{% static 'scroll-effect.js' %}"></script>
   </body>
 </html>
